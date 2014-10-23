@@ -12,7 +12,7 @@ The following instructions apply to a standard Play Framework 2.x installation.
 * In your views replace `@Assets.at("filename")` with `@CdnAssets.at("filename")` (see [sample-view.scala.html](sample-view.scala.html)).
 * Add `assetscdn="//xxxxxxxxxxx.cloudfront.net"` and `assetsversion="1"` to your `/conf/application.conf` (see [sample.conf](sample.conf)).
 * Make sure your development assets are stored in `/public/dev/`.
-* Make sure your development assets are stored in `/public/1/`.
+* Make sure your production assets are stored in `/public/1/`.
 
 Whenever you deploy a new version of your assets, bump the `assetsversion` number in the config file and store the new assets in `/public/{version number}/`. A Grunt task can make this a simple task.
 
