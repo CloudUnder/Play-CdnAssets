@@ -35,14 +35,12 @@ object CdnAssets {
 	}
 
 	def at(file: String): String = {
-		val baseUrl = if (inDevelopmentMode) {
+		if (inDevelopmentMode) {
 			val timestamp = System.currentTimeMillis / 1000
 			"/assets/dev/" + file + "?" + timestamp.toString
 		} else {
-			"/assets/" + assetsVersion + "/" + file
+			url("/assets/" + assetsVersion + "/" + file)
 		}
-
-		url(baseUrl)
 	}
 
 }
